@@ -1,13 +1,12 @@
 import flet as ft
-
 from model.nerc import Nerc
 
-
 class Controller:
+
     def __init__(self, view, model):
-        # the view, with the graphical elements of the UI
+        # The view, with the graphical elements of the UI
         self._view = view
-        # the model, which implements the logic of the program and holds the data
+        # The model, which implements the logic of the program and holds the data
         self._model = model
         self._idMap = {}
         self.fillIDMap()
@@ -16,11 +15,13 @@ class Controller:
         # TO FILL
         pass
 
-    def fillDD(self):
+    def fillDDNerc(self):
         nercList = self._model.listNerc
-
-        for n in nercList:
-            self._view._ddNerc.options.append(ft.dropdown.Option(n))
+        if nercList == []:
+            print("C'è stato un problema nell'inizializzazione del dropdown.")
+            return
+        for nerc in nercList:
+            self._view._ddNerc.options.append(ft.dropdown.Option(nerc))
         self._view.update_page()
 
     def fillIDMap(self):

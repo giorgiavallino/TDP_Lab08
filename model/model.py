@@ -1,14 +1,12 @@
 from database.DAO import DAO
 
-
 class Model:
+
     def __init__(self):
         self._solBest = []
         self._listNerc = None
         self._listEvents = None
         self.loadNerc()
-
-
 
     def worstCase(self, nerc, maxY, maxH):
         # TO FILL
@@ -22,7 +20,6 @@ class Model:
 
     def loadNerc(self):
         self._listNerc = DAO.getAllNerc()
-
 
     @property
     def listNerc(self):
