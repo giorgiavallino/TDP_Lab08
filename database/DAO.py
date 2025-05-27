@@ -2,7 +2,7 @@ from database.DB_connect import DBConnect
 from model.nerc import Nerc
 from model.powerOutages import Event
 
-class DAO:
+class Dao:
 
     def __init__(self):
         pass
